@@ -1,9 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import SVGIcons from "../SVGIcons";
 
-const FileUpload = ({ uploadValue, toggleShowModal, handleUpload }) => (
-  <div style={{ minWidth: '50%' }} className="hero section columns is-vcentered">
+const FileUpload = ({ uploadValue, handleUpload }) => (
+  <div
+    style={{ minWidth: "50%" }}
+    className="hero section columns is-vcentered"
+  >
     <div className="column is-full">
       <progress
         className="progress is-small is-info"
@@ -26,5 +30,9 @@ const FileUpload = ({ uploadValue, toggleShowModal, handleUpload }) => (
     </div>
   </div>
 );
+FileUpload.propTypes = {
+  uploadValue: PropTypes.number.isRequired,
+  handleUpload: PropTypes.func.isRequired
+};
 
 export default FileUpload;
